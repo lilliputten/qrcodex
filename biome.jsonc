@@ -7,10 +7,20 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!.vscode",
+      "!.utils",
+      "!dist",
+      "!build",
+      "!public"
+    ]
   },
   "formatter": {
     "enabled": true,
+    "lineEnding": "lf",
     "indentStyle": "space",
     "indentWidth": 2
   },
@@ -34,6 +44,11 @@
       "source": {
         "organizeImports": "on"
       }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
     }
   }
 }

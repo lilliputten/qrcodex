@@ -1,14 +1,10 @@
 {
   "name": "qrcodex",
-  "version": "0.1.0",
+  "version": "0.0.0",
+  "timestamp": "2026.04.15 04:59:01 +0300",
+  "changed": "2026.04.15, 04:40",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
-  },
+  "packageManager": "pnpm@10.18.3",
   "dependencies": {
     "next": "16.3.4",
     "react": "19.2.8",
@@ -21,8 +17,25 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "cross-env": "^10.1.0",
+    "npm-package-user-scripts-list": "^0.1.10",
+    "npm-run-all": "^4.1.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
-  "packageManager": "pnpm@10.18.3"
+  "scripts": {
+    "format": "biome format --write",
+    "check-biome": "biome check --write",
+    "check-types": "echo --Run typescript linter-- && tsc --pretty --noEmit",
+    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all check-types check-biome && echo --All checks passed--",
+    "check-and-test": "echo --Run all pre-commit check-ups and tests-- && npm-run-all check-all test && echo --All checks and tests passed--",
+    "sort-locales-UNUSED": "echo --Sort all locales-- && tsx src/packages/sort-json/cli.ts --in-place -c -i \"src/i18n/locales/*.json\"",
+    "clear-all": "echo --Clear all cache and temp files-- && rimraf node_modules/.cache .next && jest --clearCache && echo Cleared cache",
+    "dev": "echo --Run nextjs server in devepment mode-- && next dev --turbo",
+    "build": "echo --Build the project-- && next build",
+    "build-debug": "echo --Build the project in debug mode-- && cross-env __NEXT_MANGLING_DEBUG=1 next build --no-mangling",
+    "start": "echo --Start the project-- && next start",
+    "preview": "next build && next start",
+    "scripts-help": "echo --List all available script commands-- && npm-package-user-scripts-list"
+  }
 }
