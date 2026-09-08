@@ -1,5 +1,6 @@
+// ex: set ft=jsonc :
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.12/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -32,7 +33,9 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "suspicious": {
+        "noDebugger": "warn"
+      }
     },
     "domains": {
       "next": "recommended",
@@ -42,7 +45,24 @@
   "assist": {
     "actions": {
       "source": {
-        "organizeImports": "on"
+        // @see https://biomejs.dev/assist/actions/organize-imports/javascript/
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "identifierOrder": "lexicographic",
+            "groups": [
+              [":BUN:", ":NODE:"],
+              ":BLANK_LINE:",
+              [":PACKAGE:", "!@/**", "!./**"],
+              ":BLANK_LINE:",
+              "@/**",
+              ":BLANK_LINE:",
+              "./**",
+              ":BLANK_LINE:",
+              [":ALIAS:", ":PATH:"]
+            ]
+          }
+        }
       }
     }
   },
@@ -51,4 +71,16 @@
       "quoteStyle": "single"
     }
   }
+  // "overrides": [
+  //   {
+  //     "includes": ["src/**/*.js"],
+  //     "linter": {
+  //       "rules": {
+  //         "suspicious": {
+  //           "noDebugger": "warn" // This re-enables the rule for JS files
+  //         }
+  //       }
+  //     }
+  //   }
+  // ]
 }

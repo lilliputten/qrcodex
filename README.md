@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<!--
+ @since 2026.09.08
+ @changed 2026.09.08, 22:07
+-->
 
-## Getting Started
+# QR Codex Web App and Telegram Bot
 
-First, run the development server:
+Encode and decode QR codes (almost) everywhere
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ℹ️ Build info (auto-generated)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Project info: v.0.0.0 / 2026.09.09 00:11:22 +0300
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<!-- Future sections:
+## 🌟 Overview
+## 🚀 Core Features
+## 🛠️ Technology Stack
+## 📦 Installation & Setup
+## 🏗️ Project Structure
+## 🚀 Development
+## 🚀 Running telegram bot in dev mode
+## 🧪 Testing
+## 🌍 Internationalization
+## 📊 Database Schema
+## 🚀 Deployment
+## 🤝 Contributing
+-->
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📝 License
 
-## Learn More
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
-To learn more about Next.js, take a look at the following resources:
+## ☂ Support
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Issues**: [https://github.com/lilliputten/qrcodex/issues](https://github.com/lilliputten/qrcodex/issues)
+- **Email**: [lilliputten@gmail.com](mailto:lilliputten@gmail.com)
+- **Documentation**: [https://qrcodex.lilliputten.com/](https://qrcodex.lilliputten.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔗 Resources
 
-## Deploy on Vercel
+- **Telegram Bot**: [https://t.me/QRCodexBot](https://t.me/QRCodexBot)
+- **Live Application**: [https://qrcodex.lilliputten.com/](https://qrcodex.lilliputten.com/)
+- **Vercel Deployment**: [https://qrcodex.vercel.app/](https://qrcodex.vercel.app/)
+- **GitHub Repository**: [https://github.com/lilliputten/qrcodex/](https://github.com/lilliputten/qrcodex/)
+- **Project Reference**: [https://lilliputten.com/projects/2026/qrcodex/](https://lilliputten.com/projects/2026/qrcodex/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [CHANGELOG.md](CHANGELOG.md) for recent updates info.
+
+Built with ❤️ using Next.js, TypeScript, and modern web technologies.

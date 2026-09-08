@@ -1,17 +1,21 @@
 {
   "name": "qrcodex",
   "version": "0.0.0",
-  "timestamp": "2026.04.15 04:59:01 +0300",
+  "timestamp": "2026.09.09 00:11:22 +0300",
   "changed": "2026.04.15, 04:40",
   "private": true,
   "packageManager": "pnpm@10.18.3",
   "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "next": "16.3.4",
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "pretty-quick": "^4.2.2",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.2",
+    "@biomejs/biome": "2.5.12",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -24,10 +28,14 @@
     "typescript": "^5"
   },
   "scripts": {
-    "format": "biome format --write",
-    "check-biome": "biome check --write",
+    "format-biome-UNUSED": "biome format --write",
+    "format-all": "echo --Run prettier-- && prettier --write --cache . | grep -v -e cached -e unchanged || true",
+    "format": "echo --Run quick prettier-- && pretty-quick --write --cache .",
+    "check-biome": "echo --Run all biome checks-- && biome check --write",
+    "check-syntax": "echo --Run syntax linter-- && biome lint",
     "check-types": "echo --Run typescript linter-- && tsc --pretty --noEmit",
-    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all check-types check-biome && echo --All checks passed--",
+    "check-all-with-prettier": "echo --Run all pre-commit check-ups-- && npm-run-all format check-syntax check-types && echo --All checks passed--",
+    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all check-biome check-types && echo --All checks passed--",
     "check-and-test": "echo --Run all pre-commit check-ups and tests-- && npm-run-all check-all test && echo --All checks and tests passed--",
     "sort-locales-UNUSED": "echo --Sort all locales-- && tsx src/packages/sort-json/cli.ts --in-place -c -i \"src/i18n/locales/*.json\"",
     "clear-all": "echo --Clear all cache and temp files-- && rimraf node_modules/.cache .next && jest --clearCache && echo Cleared cache",
