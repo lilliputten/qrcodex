@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 
-import { predefinedLanguagesHash } from '@/constants/languages';
 import { Link } from '@/i18n/routing';
 import type { TAwaitedLocaleProps } from '@/i18n/types';
 
@@ -31,7 +30,7 @@ export default async function HomePage(props: TProps) {
                   key="filename"
                   className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]"
                 >
-                  {Array.isArray(chunks) ? chunks.join('') : chunks}
+                  {chunks}
                 </code>
               ),
             })}
@@ -61,7 +60,7 @@ export default async function HomePage(props: TProps) {
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
-            className="bg-foreground text-background flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] text-nowrap"
+            className="bg-foreground text-background flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 text-nowrap transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc]"
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
@@ -76,7 +75,7 @@ export default async function HomePage(props: TProps) {
             {t('IndexPage.deployButton')}
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] text-nowrap"
+            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 text-nowrap transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
@@ -86,27 +85,27 @@ export default async function HomePage(props: TProps) {
         </div>
 
         {/* Language Switcher */}
-        <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
-          <h3 className="text-lg font-semibold mb-2">{t('SelectLanguage')}:</h3>
+        <div className="mt-8 rounded-lg bg-gray-100 p-4 dark:bg-gray-800">
+          <h3 className="mb-2 text-lg font-semibold">{t('SelectLanguage')}:</h3>
           <div className="flex space-x-4">
             <Link
               href="/"
               locale="en"
-              className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+              className="rounded bg-blue-500 px-3 py-1 text-white hover:bg-blue-600"
             >
               English {/*t('languages.English')*/}
             </Link>
             <Link
               href="/"
               locale="es"
-              className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600"
+              className="rounded bg-green-500 px-3 py-1 text-white hover:bg-green-600"
             >
               Español {/*t('languages.Spanish')*/}
             </Link>
             <Link
               href="/"
               locale="ru"
-              className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600"
+              className="rounded bg-yellow-500 px-3 py-1 text-white hover:bg-yellow-600"
             >
               Русский {/*t('languages.Russian')*/}
             </Link>

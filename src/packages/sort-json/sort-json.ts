@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/** biome-ignore-all lint/suspicious/noExplicitAny: Temporarily using any type */
+
 export type SortOrder = 'asc' | 'desc';
 export type PrimitivePosition = 'first' | 'last';
 
@@ -79,7 +81,11 @@ export function sortJson(data: any, options: SortOptions = {}): any {
       // First compare keys
       let keyComparison = 0;
 
-      if (numericSort && !isNaN(Number(keyA)) && !isNaN(Number(keyB))) {
+      if (
+        numericSort &&
+        !Number.isNaN(Number(keyA)) &&
+        !Number.isNaN(Number(keyB))
+      ) {
         keyComparison = Number(keyA) - Number(keyB);
       } else {
         keyComparison = stringCompare(keyA, keyB, caseSensitive);

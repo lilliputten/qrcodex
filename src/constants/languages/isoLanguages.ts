@@ -1,6 +1,5 @@
-import type { TLanguage } from '@/lib/types/language';
-
 import jsonLanguages from './ISO-639-1-language.json';
+import type { TLanguage } from './types/TLanguage';
 
 // type TISOLanguageCode = typeof jsonLanguages[number]['code'];
 

@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 /* eslint-disable no-console, no-debugger */
-import { readFileSync, writeFileSync } from 'fs';
-import { stdin } from 'process';
+
+import { readFileSync, writeFileSync } from 'node:fs';
+import { stdin } from 'node:process';
 
 import chalk from 'chalk';
 import { program } from 'commander';
@@ -104,7 +105,7 @@ async function run() {
         numericSort: options.numericSort,
       };
 
-      const indent = parseInt(options.indent) || 2;
+      const indent = parseInt(options.indent, 10) || 2;
       let processedCount = 0;
 
       // Process each file
@@ -175,7 +176,7 @@ async function run() {
         numericSort: options.numericSort,
       };
       const sortedData = sortJson(jsonData, sortOptions);
-      const indent = parseInt(options.indent) || 2;
+      const indent = parseInt(options.indent, 10) || 2;
       const output = JSON.stringify(sortedData, null, indent);
 
       if (options.output) {

@@ -81,6 +81,16 @@
     "formatter": {
       "quoteStyle": "single",
     },
+    "globals": [
+      "describe",
+      "it",
+      "expect",
+      "jest",
+      "beforeEach",
+      "afterEach",
+      "beforeAll",
+      "afterAll",
+    ],
   },
   "overrides": [
     {
@@ -94,15 +104,18 @@
         },
       },
     },
-    // { // JS
-    //   "includes": ["src/**/*.js"],
-    //   "linter": {
-    //     "rules": {
-    //       "suspicious": {
-    //         "noDebugger": "warn" // This re-enables the rule for JS files
-    //       }
-    //     }
-    //   }
-    // }
+    {
+      "includes": ["**/*.test.*", "**/*.spec.*", "**/__tests__/**"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedVariables": "off",
+          },
+          "suspicious": {
+            "noDebugger": "off",
+          },
+        },
+      },
+    },
   ],
 }

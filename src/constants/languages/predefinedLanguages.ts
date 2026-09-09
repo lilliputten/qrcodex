@@ -1,6 +1,5 @@
-import type { TLanguage } from '@/lib/types/language';
-
 import { isoLanguages } from './isoLanguages';
+import type { TLanguage } from './types/TLanguage';
 
 export const predefinedLanguages: TLanguage[] = isoLanguages;
 export const predefinedLanguagesHash = isoLanguages.reduce(
