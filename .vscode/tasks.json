@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "label": "check-biome",
+      "script": "check-biome",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "biome check --write"
+    },
+    {
+      "type": "npm",
+      "label": "check-types",
+      "script": "check-types",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "tsc --pretty --noEmit"
+    },
+    {
+      "type": "npm",
+      "label": "npm: build",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "next build"
+    }
+  ]
+}

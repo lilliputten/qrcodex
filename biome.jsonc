@@ -4,7 +4,7 @@
   "vcs": {
     "enabled": true,
     "clientKind": "git",
-    "useIgnoreFile": true
+    "useIgnoreFile": true,
   },
   "files": {
     "ignoreUnknown": true,
@@ -16,31 +16,42 @@
       "!.utils",
       "!dist",
       "!build",
-      "!public"
-    ]
+      "!public",
+    ],
   },
   "formatter": {
     "enabled": true,
     "lineEnding": "lf",
     "indentStyle": "space",
-    "indentWidth": 2
+    "indentWidth": 2,
   },
   "css": {
     "parser": {
-      "tailwindDirectives": true
-    }
+      "tailwindDirectives": true,
+    },
+  },
+  "json": {
+    "parser": {
+      "allowTrailingCommas": true,
+    },
   },
   "linter": {
     "enabled": true,
     "rules": {
+      "style": {
+        "useTemplate": "off",
+      },
       "suspicious": {
-        "noDebugger": "warn"
-      }
+        "noDebugger": "warn",
+      },
+      "correctness": {
+        "noUnusedVariables": "warn",
+      },
     },
     "domains": {
       "next": "recommended",
-      "react": "recommended"
-    }
+      "react": "recommended",
+    },
   },
   "assist": {
     "actions": {
@@ -59,28 +70,39 @@
               ":BLANK_LINE:",
               "./**",
               ":BLANK_LINE:",
-              [":ALIAS:", ":PATH:"]
-            ]
-          }
-        }
-      }
-    }
+              [":ALIAS:", ":PATH:"],
+            ],
+          },
+        },
+      },
+    },
   },
   "javascript": {
     "formatter": {
-      "quoteStyle": "single"
-    }
-  }
-  // "overrides": [
-  //   {
-  //     "includes": ["src/**/*.js"],
-  //     "linter": {
-  //       "rules": {
-  //         "suspicious": {
-  //           "noDebugger": "warn" // This re-enables the rule for JS files
-  //         }
-  //       }
-  //     }
-  //   }
-  // ]
+      "quoteStyle": "single",
+    },
+  },
+  "overrides": [
+    {
+      "includes": ["*.jsonc", ".vscode/*.json"],
+      "json": {
+        "parser": {
+          "allowTrailingCommas": true,
+        },
+        "formatter": {
+          "trailingCommas": "all",
+        },
+      },
+    },
+    // { // JS
+    //   "includes": ["src/**/*.js"],
+    //   "linter": {
+    //     "rules": {
+    //       "suspicious": {
+    //         "noDebugger": "warn" // This re-enables the rule for JS files
+    //       }
+    //     }
+    //   }
+    // }
+  ],
 }

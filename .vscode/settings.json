@@ -1,4 +1,7 @@
+// ex: set ft=jsonc:sw=2:ts=4:
+// @changed 2026.09.09, 22:37
 {
+  // "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "search.excludeFolders": [".next", "dist", ".git", "node_modules", ".venv"],
   "search.exclude": {
     "src/generated": true,

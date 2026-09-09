@@ -1,3 +1,32 @@
+
+# Project Instructions
+
+Always create `TODO-{task-name}.md` roadmaps before long tasks and update progress after each step.
+
+## Project structure
+
+- Source root: `src`.
+- Used code aliases: `import from '@/i18n'` instead of `import from '../i18n'`.
+
+## Stack
+
+- Package manager: pnpm.
+- Backend: Next.js + app router.
+- Frontend: Next.js + app router, React, TypeScript.
+- Formatting/linting: biomejs.
+
+## Before finishing
+
+- Run formatting and linting (biome and tsc: `biome lint && tsc --pretty --noEmit`).
+- Summarize changed files and any unresolved issues.
+
+## Common rules
+
+- Never use `any` type.
+- Always run `pnpm check-all` or `biome lint && tsc --pretty --noEmit` to check and fix all errors.
+- Always use English language.
+
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
