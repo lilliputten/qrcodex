@@ -2,14 +2,14 @@ import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 
 import { Link } from '@/i18n/routing';
+import type { TAwaitedLocaleProps } from '@/i18n/types';
 
-type Props = {
-  params: Promise<{ locale: string }>;
-};
+type TProps = TAwaitedLocaleProps;
 
-export default async function HomePage({ params }: Props) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'IndexPage' });
+export default async function HomePage(props: TProps) {
+  const { params: paramsPromise } = props;
+  const { locale } = await paramsPromise;
+  const t = await getTranslations({ locale });
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -43,7 +43,7 @@ export default async function HomePage({ params }: Props) {
                   href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
                   className="font-medium text-zinc-950 dark:text-zinc-50"
                 >
-                  {t('templates')}
+                  {t('IndexPage.templates')}
                 </Link>
               ),
               learningLink: () => (
@@ -52,7 +52,7 @@ export default async function HomePage({ params }: Props) {
                   href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
                   className="font-medium text-zinc-950 dark:text-zinc-50"
                 >
-                  {t('learning')}
+                  {t('IndexPage.learning')}
                 </Link>
               ),
             })}
@@ -72,7 +72,7 @@ export default async function HomePage({ params }: Props) {
               width={16}
               height={14}
             />
-            {t('deployButton')}
+            {t('IndexPage.deployButton')}
           </a>
           <a
             className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] md:w-[158px] dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
@@ -80,13 +80,13 @@ export default async function HomePage({ params }: Props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t('documentationButton')}
+            {t('IndexPage.documentationButton')}
           </a>
         </div>
 
         {/* Language Switcher */}
         <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
-          <h3 className="text-lg font-semibold mb-2">{t('selectLanguage')}:</h3>
+          <h3 className="text-lg font-semibold mb-2">{t('IndexPage.selectLanguage')}:</h3>
           <div className="flex space-x-4">
             <Link
               href="/"

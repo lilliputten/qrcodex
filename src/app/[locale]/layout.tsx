@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 
-import { strictLocalesList, type TAwaitedLocaleProps } from '@/i18n/types';
+import { siteDescription, siteTitle } from '@/config';
+import { type TAwaitedLocaleProps, strictLocalesList } from '@/i18n/types';
 
 // import { getLocale, getTranslations } from 'next-intl/server';
 
@@ -20,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'QR Codex Web App and Telegram Bot',
-  description: 'Encode and decode QR codes (almost) everywhere',
+  title: siteTitle,
+  description: siteDescription,
 };
 
 // Enable edge runtime to support static generation
