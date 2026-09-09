@@ -10,7 +10,7 @@ if (typeof window !== 'undefined') {
   );
   // eslint-disable-next-line no-console
   console.error('[envServer]', error);
-  // biome-ignore lint/suspicious/noDebugger: debugging
+  // biome-ignore lint/suspicious/noDebugger: DEBUG
   debugger;
   throw error;
 }
@@ -25,7 +25,7 @@ if (!parsedEnv.success) {
     parsedEnv.error.flatten().fieldErrors,
     parsedEnv,
   );
-  // biome-ignore lint/suspicious/noDebugger: debugging
+  // biome-ignore lint/suspicious/noDebugger: DEBUG
   debugger;
   throw error;
 }

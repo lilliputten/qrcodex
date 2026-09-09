@@ -10,9 +10,9 @@ export const routing = defineRouting({
   // Used when no locale matches
   defaultLocale: 'en',
 
-  // Optional: Set to true to allow non-locale paths (like /api/*)
-  // This helps with handling paths that shouldn't be internationalized
-  localePrefix: 'as-needed',
+  // // Optional: Set to true to allow non-locale paths (like /api[>)
+  // // This helps with handling paths that shouldn't be internationalized
+  // localePrefix: 'as-needed',
 });
 
 // Lightweight wrappers around Next.js' navigation APIs

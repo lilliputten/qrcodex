@@ -24,10 +24,14 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "chalk": "^6.0.0",
+    "commander": "^15.0.0",
     "cross-env": "^10.1.0",
+    "glob": "^13.0.6",
     "npm-package-user-scripts-list": "^0.1.10",
     "npm-run-all": "^4.1.5",
     "tailwindcss": "^4",
+    "tsx": "^4.23.13",
     "typescript": "^5"
   },
   "scripts": {
@@ -41,7 +45,7 @@
     "check-all-with-prettier": "echo --Run all pre-commit check-ups-- && npm-run-all format check-syntax check-types && echo --All checks passed--",
     "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all check-biome check-types && echo --All checks passed--",
     "check-and-test": "echo --Run all pre-commit check-ups and tests-- && npm-run-all check-all test && echo --All checks and tests passed--",
-    "sort-locales-UNUSED": "echo --Sort all locales-- && tsx src/packages/sort-json/cli.ts --in-place -c -i \"src/i18n/locales/*.json\"",
+    "sort-locales": "echo --Sort all locales-- && tsx src/packages/sort-json/cli.ts --in-place -c -i \"src/i18n/locales/*.json\"",
     "clear-all": "echo --Clear all cache and temp files-- && rimraf node_modules/.cache .next && jest --clearCache && echo Cleared cache",
     "dev": "echo --Run nextjs server in devepment mode-- && next dev --turbo",
     "build": "echo --Build the project-- && next build",

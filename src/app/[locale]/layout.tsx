@@ -8,6 +8,8 @@ import { type TAwaitedLocaleProps, strictLocalesList } from '@/i18n/types';
 
 // import { getLocale, getTranslations } from 'next-intl/server';
 
+import '@/app/globals.css';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin', 'cyrillic'],
