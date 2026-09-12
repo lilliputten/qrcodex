@@ -42,6 +42,8 @@ export const envServerSchema = z.object({
   BOT_USERNAME_TEST: z.string().optional(),
   BOT_TOKEN: z.string().min(1),
   BOT_TOKEN_TEST: z.string().optional(),
+  BOT_SECRET: z.string().min(1),
+  BOT_SECRET_TEST: z.string().optional(),
   WEBHOOK_HOST: z.string().optional(),
 
   // // AI API

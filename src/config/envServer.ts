@@ -8,7 +8,7 @@ if (typeof window !== 'undefined') {
   const error = new Error(
     'The "envServer" should be used only in server components',
   );
-  // eslint-disable-next-line no-console
+  // biome-ignore lint/suspicious/noConsole: DEBUG
   console.error('[envServer]', error);
   // biome-ignore lint/suspicious/noDebugger: DEBUG
   debugger;
@@ -19,7 +19,7 @@ const parsedEnv = envServerSchema.safeParse(process.env);
 
 if (!parsedEnv.success) {
   const error = new Error('Invalid server environment variables');
-  // eslint-disable-next-line no-console
+  // biome-ignore lint/suspicious/noConsole: DEBUG
   console.error(
     error.message,
     parsedEnv.error.flatten().fieldErrors,
@@ -109,7 +109,7 @@ export const isDev = envServer.NODE_ENV === 'development';
 export const PUBLIC_URL = isDev
   ? 'http://localhost:3000'
   : isVercelProduction
-    ? NEXT_PUBLIC_URL /* 'https://' +envServer.VERCEL_PROJECT_PRODUCTION_URL */
+    ? NEXT_PUBLIC_URL /* 'https://' + envServer.VERCEL_PROJECT_PRODUCTION_URL */
     : 'https://' + envServer.VERCEL_URL;
 
 export const WEBHOOK_HOST = envServer.WEBHOOK_HOST || PUBLIC_URL;
@@ -122,6 +122,10 @@ export const BOT_TOKEN =
   (isDev || isVercelPreview) && envServer.BOT_TOKEN_TEST
     ? envServer.BOT_TOKEN_TEST
     : envServer.BOT_TOKEN;
+export const BOT_SECRET =
+  (isDev || isVercelPreview) && envServer.BOT_SECRET_TEST
+    ? envServer.BOT_SECRET_TEST
+    : envServer.BOT_SECRET;
 
 /* // DEBUG: Show environment (will appear in build logs)
  * console.log('[envServer]', {

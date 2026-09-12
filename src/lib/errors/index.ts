@@ -1,1 +1,1 @@
-export * from './errors-helpers.ts';
+export * from './errors-helpers';

@@ -1,5 +1,5 @@
-// ex: set ft=jsonc:sw=2:ts=4:
-// @changed 2026.09.09, 22:37
+// ex: set ft=jsonc:sw=2:ts=2:
+// @changed 2026.09.12, 20:48
 {
   // "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "search.excludeFolders": [".next", "dist", ".git", "node_modules", ".venv"],
@@ -16,6 +16,7 @@
     "**/*.tmp": true,
     "**/.*.sw?": true
   },
+  // Stylelint options...
   "css.validate": false,
   "scss.validate": false,
   "less.validate": false,
@@ -28,12 +29,40 @@
     "*.css": "css",
     "*.scss": "scss"
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": "explicit"
-  },
+  // Configure i18n...
   "i18n-ally.localesPaths": ["src/i18n/locales"],
   "i18n-ally.keystyle": "nested",
   "i18n-ally.enabledParsers": ["json"],
   "i18n-ally.sourceLanguage": "en",
-  "i18n-ally.displayLanguage": "en"
+  "i18n-ally.displayLanguage": "en",
+  // Set linter to biome...
+  "biome.enabled": true,
+  "eslint.enable": false,
+  // Set formatter to biome...
+  "editor.defaultFormatter": "biomejs.biome",
+  "[typescript]": {
+      "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+      "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+      "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+      "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[scss]": {
+      "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascript]": {
+      "editor.defaultFormatter": "biomejs.biome"
+  },
+  // Autoformat and fix on save
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  }
 }

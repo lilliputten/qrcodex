@@ -21,7 +21,7 @@ export function useT(namespace?: string) {
 
     return originalT;
   } catch (error) {
-    // eslint-disable-next-line no-console
+    // biome-ignore lint/suspicious/noConsole: DEBUG
     console.error('[useT]', {
       error,
       namespace,

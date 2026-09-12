@@ -45,6 +45,7 @@
         "useTemplate": "off",
       },
       "suspicious": {
+        "noConsole": "warn",
         "noDebugger": "warn",
       },
       "correctness": {

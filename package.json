@@ -12,6 +12,9 @@
     "pretty-quick": "^4.2.2"
   },
   "dependencies": {
+    "@grammyjs/commands": "^1.4.0",
+    "@grammyjs/menu": "^1.5.0",
+    "grammy": "^1.46.0",
     "lucide-react": "^1.43.0",
     "next": "16.3.4",
     "next-intl": "^4.14.2",
@@ -39,7 +42,8 @@
     "tailwindcss": "^4",
     "ts-jest": "^29",
     "tsx": "^4.23.13",
-    "typescript": "^5"
+    "typescript": "^5",
+    "yaml": "^2.9.1"
   },
   "scripts": {
     "format-biome": "echo --Run biome prettier-- && biome format --write --unsafe",
@@ -47,7 +51,7 @@
     "format-prettier-UNUSED": "echo --Run quick prettier-- && pretty-quick --write --cache .",
     "check-syntax": "echo --Run all biome checks-- && biome check --write --unsafe",
     "check-types": "echo --Run typescript linter-- && tsc --pretty --noEmit",
-    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all format-lint-and-fix check-types && echo --All checks passed--",
+    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all check-syntax check-types && echo --All checks passed--",
     "check-and-test": "echo --Run all pre-commit check-ups and tests-- && npm-run-all check-all test && echo --All checks and tests passed--",
     "sort-locales": "echo --Sort all locales-- && tsx src/packages/sort-json/cli.ts --in-place -c -i \"src/i18n/locales/*.json\"",
     "clear-all": "echo --Clear all cache and temp files-- && rimraf node_modules/.cache .next && jest --clearCache && echo Cleared cache",
@@ -59,6 +63,7 @@
     "build-debug": "echo --Build the project in debug mode-- && cross-env __NEXT_MANGLING_DEBUG=1 next build --no-mangling",
     "start": "echo --Start the project-- && next start",
     "preview": "next build && next start",
+    "xtunnel": "echo --Start xtunnel local dev server (don't forget to add the tunnel address as WEBHOOK_HOST to .env.local for webhook or .env.logging-ngrok for logging)-- && xtunnel http 3000",
     "scripts-help": "echo --List all available script commands-- && npm-package-user-scripts-list"
   }
 }

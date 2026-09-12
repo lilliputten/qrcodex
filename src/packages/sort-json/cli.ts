@@ -5,7 +5,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { stdin } from 'node:process';
 
-import chalk from 'chalk';
 import { program } from 'commander';
 import { glob } from 'glob';
 
@@ -58,30 +57,20 @@ async function run() {
 
   // Validate primitive position
   if (options.primitive !== 'first' && options.primitive !== 'last') {
-    console.error(
-      chalk.red(
-        `Invalid primitive position: ${options.primitive}. Use 'first' or 'last'`,
-      ),
-    );
     process.exit(1);
   }
 
   // Validate sort order
   if (options.sort !== 'asc' && options.sort !== 'desc') {
-    console.error(
-      chalk.red(`Invalid sort order: ${options.sort}. Use 'asc' or 'desc'`),
-    );
     process.exit(1);
   }
 
   // Validate in-place option
   if (options.inPlace && !options.input) {
-    console.error(chalk.red('--in-place requires an input pattern'));
     process.exit(1);
   }
 
   if (options.inPlace && options.output) {
-    console.error(chalk.red('Cannot use --in-place with --output'));
     process.exit(1);
   }
 
@@ -91,9 +80,6 @@ async function run() {
       const files = await glob(options.input, { nodir: true });
 
       if (files.length === 0) {
-        console.error(
-          chalk.red(`No files found matching pattern: ${options.input}`),
-        );
         process.exit(1);
       }
 
@@ -119,39 +105,26 @@ async function run() {
           if (options.inPlace) {
             writeFileSync(file, output, 'utf-8');
             if (options.color) {
-              console.log(chalk.green(`✓ ${file}`));
             } else {
-              console.log(`Processed: ${file}`);
             }
           } else if (options.output) {
             // For multiple files with single output, only process the first one
             if (processedCount === 0) {
               writeFileSync(options.output, output, 'utf-8');
               if (options.color) {
-                console.log(
-                  chalk.green(`✓ Sorted JSON written to ${options.output}`),
-                );
               } else {
-                console.log(`Sorted JSON written to ${options.output}`);
               }
             }
           } else {
             // Output to stdout - only for single file or first file
             if (files.length === 1 || processedCount === 0) {
-              console.log(output);
             }
           }
           processedCount++;
-        } catch (fileError) {
-          console.error(
-            chalk.red(`Error processing ${file}:`),
-            fileError instanceof Error ? fileError.message : 'Unknown error',
-          );
-        }
+        } catch (_fileError) {}
       }
 
       if (options.inPlace && options.color) {
-        console.log(chalk.green(`\n✓ Processed ${processedCount} file(s)`));
       }
     } else {
       // Read from stdin
@@ -182,21 +155,12 @@ async function run() {
       if (options.output) {
         writeFileSync(options.output, output, 'utf-8');
         if (options.color) {
-          console.log(
-            chalk.green(`✓ Sorted JSON written to ${options.output}`),
-          );
         } else {
-          console.log(`Sorted JSON written to ${options.output}`);
         }
       } else {
-        console.log(output);
       }
     }
-  } catch (error) {
-    console.error(
-      chalk.red('Error:'),
-      error instanceof Error ? error.message : 'Unknown error',
-    );
+  } catch (_error) {
     // biome-ignore lint/suspicious/noDebugger: DEBUG
     debugger;
     process.exit(1);

@@ -40,7 +40,7 @@ export async function getServerInfo() {
     };
   } catch (error) {
     const errMsg = getErrorText(error);
-    // eslint-disable-next-line no-console
+    // biome-ignore lint/suspicious/noConsole: DEBUG
     console.error('[StartBotPage:getServerInfo]', errMsg, { error });
     throw error;
   }
