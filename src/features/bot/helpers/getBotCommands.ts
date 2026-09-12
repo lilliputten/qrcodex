@@ -1,29 +1,29 @@
+import { getT } from '@/i18n/getT';
 import type { TLocale } from '@/i18n/types';
 
 /* TODO:
  * - Move commands to the respective command modules.
- * - Internationalize help and command's messages.
  */
 
-export async function getBotCommands(_locale: TLocale) {
-  // TODO: Generate commands list for given locale
+export async function getBotCommands(locale: TLocale) {
+  const t = await getT({ locale });
   const botCommands = [
     {
       command: 'start',
-      description: 'Start the bot',
+      description: t('BotHelp.Start'),
     },
     {
       command: 'help',
-      description: 'Get help with the bot',
+      description: t('BotHelp.Help'),
     },
     /* {
      *   command: 'authorize',
-     *   description: 'Get an authorization token to log in to the website',
+     *   description: t('BotHelp.Authorize'),
      * },
      */
     {
       command: 'settings',
-      description: 'Adjust bot settings',
+      description: t('BotHelp.Settings'),
     },
   ];
   return botCommands;

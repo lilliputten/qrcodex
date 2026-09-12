@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { getTranslations } from 'next-intl/server';
 
+import { getT } from '@/i18n/getT';
 import { Link } from '@/i18n/routing';
 import type { TAwaitedLocaleProps } from '@/i18n/types';
 
@@ -9,7 +9,7 @@ type TProps = TAwaitedLocaleProps;
 export default async function HomePage(props: TProps) {
   const { params: paramsPromise } = props;
   const { locale } = await paramsPromise;
-  const t = await getTranslations({ locale });
+  const t = await getT({ locale });
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">

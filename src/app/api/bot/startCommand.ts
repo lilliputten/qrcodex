@@ -1,7 +1,7 @@
 import { versionInfo } from '@/config';
 import type { TCommandContext } from '@/features/bot/core/botTypes';
-
-// import { authorizeCommand } from './authorizeCommand';
+import { getContextLocale } from '@/features/bot/helpers/getContextLocale';
+import { getT } from '@/i18n/getT';
 
 export async function startCommand(ctx: TCommandContext) {
   /* // Catch integrated authorize request
@@ -13,12 +13,15 @@ export async function startCommand(ctx: TCommandContext) {
    * }
    */
 
+  const locale = getContextLocale(ctx);
+  const t = await getT({ locale });
+
   await ctx.reply(
     [
       // Welcome message
-      'Welcome!',
+      t('Bot.Welcome'),
       // 'Use /authorize to sign in to the app.',
-      `The bot version is: ${versionInfo}`,
+      `${t('Bot.VersionIs')} ${versionInfo}`,
     ].join('\n\n'),
   );
 }

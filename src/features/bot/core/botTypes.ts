@@ -8,12 +8,13 @@ import type {
 } from 'grammy';
 
 export interface SessionData {
-  language_code?: string;
+  locale?: string;
 }
 
-export type BotContext = Context & SessionFlavor<SessionData> & CommandsFlavor;
+export type TWithBotSession = SessionFlavor<SessionData>;
+export type TBotContext = Context & TWithBotSession & CommandsFlavor;
 
-export type TCommandContext = CommandContext<BotContext>;
-export type TCallbackContext = CallbackQueryContext<BotContext>;
+export type TCommandContext = CommandContext<TBotContext>;
+export type TCallbackContext = CallbackQueryContext<TBotContext>;
 
-export type TBot = Bot<BotContext>;
+export type TBot = Bot<TBotContext>;

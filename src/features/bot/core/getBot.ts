@@ -7,7 +7,7 @@ import { BOT_TOKEN } from '@/config/envServer';
 // import { prisma } from '@/lib/db';
 import { getErrorText } from '@/lib/errors';
 
-import type { BotContext, SessionData, TBot } from './botTypes';
+import type { SessionData, TBot, TBotContext } from './botTypes';
 
 const cachedBots: Record<string, TBot> = {};
 
@@ -18,7 +18,7 @@ const _timeoutSeconds = isDev ? 30 : 60;
 function getInitialSession(): SessionData {
   return {
     // Default sesion contents...
-    language_code: undefined,
+    locale: undefined,
   };
 }
 
@@ -30,7 +30,7 @@ export function getBot(token: string = BOT_TOKEN) {
   try {
     // const bot = new Bot(token);
     // @see constructor(token: string, config?: BotConfig<C>);
-    const bot = new Bot<BotContext>(token, {
+    const bot = new Bot<TBotContext>(token, {
       client: {
         // timeoutSeconds,
       },
