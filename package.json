@@ -2,17 +2,19 @@
   "name": "qrcodex",
   "version": "0.0.0",
   "timestamp": "2026.09.09 00:11:22 +0300",
-  "changed": "2026.04.15, 04:40",
+  "changed": "2026.09.12, 18:50",
   "private": true,
   "packageManager": "pnpm@10.18.3",
-  "dependencies": {
+  "__unusedDependencies__": {
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "pretty-quick": "^4.2.2"
+  },
+  "dependencies": {
     "lucide-react": "^1.43.0",
     "next": "16.3.4",
     "next-intl": "^4.14.2",
-    "prettier": "^3.9.6",
-    "prettier-plugin-tailwindcss": "^0.8.1",
-    "pretty-quick": "^4.2.2",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "zod": "^4.6.0"
@@ -40,15 +42,12 @@
     "typescript": "^5"
   },
   "scripts": {
-    "format-biome": "biome format --write",
-    "format-all": "echo --Run prettier-- && prettier --write --cache . | grep -v -e cached -e unchanged || true",
-    "format-prettier": "echo --Run quick prettier-- && pretty-quick --write --cache .",
-    "check-biome-fix": "echo --Run all biome checks-- && biome check --write --unsafe",
-    "check-biome": "echo --Run all biome checks-- && biome check --write",
-    "check-syntax": "echo --Run syntax linter-- && biome lint",
+    "format-biome": "echo --Run biome prettier-- && biome format --write --unsafe",
+    "format-all-UNUSED": "echo --Run prettier-- && prettier --write --cache . | grep -v -e cached -e unchanged || true",
+    "format-prettier-UNUSED": "echo --Run quick prettier-- && pretty-quick --write --cache .",
+    "check-syntax": "echo --Run all biome checks-- && biome check --write --unsafe",
     "check-types": "echo --Run typescript linter-- && tsc --pretty --noEmit",
-    "check-all-with-prettier": "echo --Run all pre-commit check-ups-- && npm-run-all format check-syntax check-types && echo --All checks passed--",
-    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all check-biome check-types && echo --All checks passed--",
+    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all format-lint-and-fix check-types && echo --All checks passed--",
     "check-and-test": "echo --Run all pre-commit check-ups and tests-- && npm-run-all check-all test && echo --All checks and tests passed--",
     "sort-locales": "echo --Sort all locales-- && tsx src/packages/sort-json/cli.ts --in-place -c -i \"src/i18n/locales/*.json\"",
     "clear-all": "echo --Clear all cache and temp files-- && rimraf node_modules/.cache .next && jest --clearCache && echo Cleared cache",
