@@ -12,14 +12,29 @@
     "pretty-quick": "^4.2.2"
   },
   "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/runtime": "^7.3.1",
     "@grammyjs/commands": "^1.4.0",
     "@grammyjs/menu": "^1.5.0",
+    "@hot-loader/react-dom": "^16.8.1",
+    "babel-plugin-react-require": "^3.1.1",
+    "babel-plugin-transform-zero-dirname-filename": "^1.1.1-alpha.0",
+    "cssnano": "^4.1.10",
     "grammy": "^1.46.0",
+    "jimp": "^1.6.1",
+    "jsqr": "^1.4.0",
     "lucide-react": "^1.43.0",
     "next": "16.3.4",
     "next-intl": "^4.14.2",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "qrcode": "^1.5.4",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-helmet-async": "^1.0.4",
+    "react-hot-loader": "^4.12.15",
+    "regenerator-runtime": "^0.12.0",
+    "typescript": "^3.7.2",
     "zod": "^4.6.0"
   },
   "devDependencies": {
@@ -27,6 +42,7 @@
     "@tailwindcss/postcss": "^4",
     "@types/jest": "^29",
     "@types/node": "^20",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
@@ -65,5 +81,8 @@
     "preview": "next build && next start",
     "xtunnel": "echo --Start xtunnel local dev server (don't forget to add the tunnel address as WEBHOOK_HOST to .env.local for webhook or .env.logging-ngrok for logging)-- && xtunnel http 3000",
     "scripts-help": "echo --List all available script commands-- && npm-package-user-scripts-list"
+  },
+  "alias": {
+    "react-dom": "@hot-loader/react-dom"
   }
 }
