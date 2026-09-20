@@ -64,7 +64,7 @@ export async function sendLoggingMessage(
     return firstMsg;
   } catch (error) {
     const errMsg = getErrorText(error);
-    // biome-ignore lint/suspicious/noConsole: DEBUG
+    // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
     console.warn('[sendLoggingMessage]', errMsg, {
       error,
       text,

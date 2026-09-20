@@ -98,7 +98,7 @@
   },
   "overrides": [
     {
-      "includes": ["*.jsonc", ".vscode/*.json"],
+      "includes": ["*.jsonc", "tsconfig.json", ".vscode/*.json"],
       "json": {
         "parser": {
           "allowTrailingCommas": true,

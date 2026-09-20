@@ -1,24 +1,10 @@
 {
-  "AIPoweredLearning": "AI-Powered Learning",
   "AccessDeniedError": "Access denied",
-  "ActiveRecallPractice": "Active Recall Practice",
   "Add": "Add",
   "AddNew": "Add New",
-  "AddNewAnswer": "Add New Answer",
-  "AddNewCategory": "Add New Category",
-  "AddNewQuestion": "Add New Question",
-  "AddNewTopic": "Add New Topic",
   "AddTopic": "Add Topic",
   "Added": "Added",
-  "AiClientTypeHint": "Select an AI provider to generate the data",
-  "AiClientTypeLabel": "AI Provider",
-  "AiGenerationTemperature": "AI Generation Temperature",
-  "AiGenerationTemperatureHint": "Select the generation temperature, from 0 to 1 (less is more predictable generation, more is more variable).",
-  "AllowedToGenerate": "Allowed to generate",
   "Answer": "Answer",
-  "AnswerNotFound": "Answer not found",
-  "Answers": "Answers",
-  "AnswersCount": "Answers count",
   "AnyLanguage": "Any Language",
   "AppLanguage": "Application Language",
   "Apply": "Apply",
@@ -438,5 +424,10 @@
     "Yoruba": "Yoruba",
     "Zhuang": "Zhuang",
     "Zulu": "Zulu"
+  },
+  "App": {
+    "Keywords": "",
+    "Description": "QR Codex Web App and Telegram Bot",
+    "Title": "QR Codex"
   }
 }

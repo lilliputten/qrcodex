@@ -1,3 +1,9 @@
+/*
+ex: set ft=jsdoc :
+@desc Typescript compiler configuration
+@changed 2026.09.21, 00:31
+@see https://www.typescriptlang.org/it/tsconfig/
+*/
 {
   "compilerOptions": {
     "target": "ES2017",
@@ -15,13 +21,13 @@
     "incremental": true,
     "plugins": [
       {
-        "name": "next"
-      }
+        "name": "next",
+      },
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
     },
-    "types": ["jest", "@types/jest"]
+    "types": ["jest", "@types/jest"],
   },
   "include": [
     "next-env.d.ts",
@@ -29,7 +35,11 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
   ],
-  "exclude": ["node_modules", ".next/dev/types/validator.ts"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    // ".next/dev/types/validator.ts",
+  ],
 }

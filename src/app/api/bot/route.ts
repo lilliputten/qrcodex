@@ -37,7 +37,7 @@ bot.on('message:text', async (ctx) => {
       locale,
       message,
     };
-    // biome-ignore lint/suspicious/noConsole: DEBUG
+    // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
     console.log(__idMsg, __logData, {
       session,
       ctx,
@@ -52,7 +52,7 @@ bot.on('message:text', async (ctx) => {
     await ctx.reply(replyText);
   } catch (error) {
     const details = getErrorText(error);
-    // biome-ignore lint/suspicious/noConsole: DEBUG
+    // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
     console.error('[bot/route]', details, {
       error,
       ctx,

@@ -50,7 +50,7 @@ export function getBot(token: string = BOT_TOKEN) {
     const errMsg = ['Bot creation error', getErrorText(error)]
       .filter(Boolean)
       .join(': ');
-    // biome-ignore lint/suspicious/noConsole: DEBUG
+    // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
     console.error('[getBot]', errMsg, {
       error,
       token,

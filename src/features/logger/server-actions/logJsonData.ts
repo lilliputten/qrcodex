@@ -71,7 +71,7 @@ export async function logJsonData(
         ]
           .filter(Boolean)
           .join('\n\n');
-        // biome-ignore lint/suspicious/noConsole: DEBUG
+        // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
         console.error('[logJsonData]', comboMsg, {
           error,
           data,
@@ -107,7 +107,7 @@ export async function logJsonData(
     return sentMessage;
   } catch (error) {
     const errMsg = getErrorText(error);
-    // biome-ignore lint/suspicious/noConsole: DEBUG
+    // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
     console.warn('[logJsonData]', errMsg, {
       error,
       text,

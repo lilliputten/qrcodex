@@ -2,21 +2,9 @@
   "AccessDeniedError": "Доступ запрещен",
   "Add": "Добавить",
   "AddNew": "Добавить новый",
-  "AddNewAnswer": "Добавить новый ответ",
-  "AddNewCategory": "Добавить новую категорию",
-  "AddNewQuestion": "Добавить новый вопрос",
-  "AddNewTopic": "Добавить новую тему",
   "AddTopic": "Добавить тему",
   "Added": "Добавлено",
-  "AiClientTypeHint": "Выберите AI провайдера для генерации данных",
-  "AiClientTypeLabel": "AI Провайдер",
-  "AiGenerationTemperature": "Температура AI генерации",
-  "AiGenerationTemperatureHint": "Выберите температуру генерации, от 0 до 1 (меньше -- более предсказуемая генерация, больше -- более вариантивная).",
-  "AllowedToGenerate": "Разрешено генерировать",
   "Answer": "Ответ",
-  "AnswerNotFound": "Ответ не найден",
-  "Answers": "Ответы",
-  "AnswersCount": "Количество ответов",
   "AnyLanguage": "Любой язык",
   "AppLanguage": "Язык приложения",
   "Apply": "Применить",
@@ -424,5 +412,10 @@
     "Yoruba": "Йоруба",
     "Zhuang": "Чжуанский",
     "Zulu": "Зулусский"
+  },
+  "App": {
+    "Keywords": "",
+    "Description": "Веб-приложение QR-кода и Telegram-бот",
+    "Title": "QR Codex"
   }
 }

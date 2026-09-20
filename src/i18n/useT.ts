@@ -21,7 +21,7 @@ export function useT(namespace?: string) {
 
     return originalT;
   } catch (error) {
-    // biome-ignore lint/suspicious/noConsole: DEBUG
+    // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
     console.error('[useT]', {
       error,
       namespace,

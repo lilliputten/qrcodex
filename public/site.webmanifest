@@ -1,0 +1,19 @@
+{
+  "name": "QR Codex Web App and Telegram Bot",
+  "short_name": "QRCodex",
+  "icons": [
+    {
+      "src": "/static/favicons/android-chrome-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#222244",
+  "display": "standalone"
+}

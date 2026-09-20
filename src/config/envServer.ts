@@ -8,7 +8,7 @@ if (typeof window !== 'undefined') {
   const error = new Error(
     'The "envServer" should be used only in server components',
   );
-  // biome-ignore lint/suspicious/noConsole: DEBUG
+  // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
   console.error('[envServer]', error);
   // biome-ignore lint/suspicious/noDebugger: DEBUG
   debugger;
@@ -19,7 +19,7 @@ const parsedEnv = envServerSchema.safeParse(process.env);
 
 if (!parsedEnv.success) {
   const error = new Error('Invalid server environment variables');
-  // biome-ignore lint/suspicious/noConsole: DEBUG
+  // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
   console.error(
     error.message,
     parsedEnv.error.flatten().fieldErrors,

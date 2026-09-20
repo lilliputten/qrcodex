@@ -32,7 +32,9 @@ export async function logData(
   const ipCountry = headers['x-vercel-ip-country'];
   const ipLatitude = headers['x-vercel-ip-latitude']; // "55.6784"
   const ipLongitude = headers['x-vercel-ip-longitude']; // "37.2652"
-  const ipCity = headers['x-vercel-ip-city']?.replace(/%20/g, ' ');
+  const rawCity =
+    /* __debugCity ? 'S%C3%A3o%20Paulo' : */ headers['x-vercel-ip-city'];
+  const ipCity = rawCity ? decodeURIComponent(rawCity) : '';
   const intlLocale = headers['x-next-intl-locale'];
   const now = new Date();
   // const dateTag = formatDateTag(now); // -> 2026-02-06,16:29:56:731
@@ -76,7 +78,7 @@ export async function logData(
       const message = 'Error parsing log data';
       const details = getErrorText(error);
       const comboMsg = [message, details].filter(Boolean).join(': ');
-      // biome-ignore lint/suspicious/noConsole: DEBUG
+      // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
       console.error('[logData]', idMsg, comboMsg, {
         error,
         dataToSend,
@@ -88,10 +90,10 @@ export async function logData(
   // Show a message in console if the flag specified
   if (opts.level) {
     if (opts.level === 'error') {
-      // biome-ignore lint/suspicious/noConsole: DEBUG
+      // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
       console.error(idMsg, dataStr);
     } else {
-      // biome-ignore lint/suspicious/noConsole: DEBUG
+      // biome-ignore lint/suspicious/noConsole suppressions/unused: DEBUG
       console.log(idMsg, dataStr);
     }
   }

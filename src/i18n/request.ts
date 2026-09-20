@@ -6,6 +6,16 @@ import { type TLocale, defaultLocale, strictLocalesList } from './types';
 const supportedLocales = strictLocalesList; // ['en', 'es', 'ru'];
 
 export default getRequestConfig(async ({ locale }) => {
+  /* // NOTE: `next/root-params` is prohibited to use outside of the `app` folder
+   * const paramValue = await rootParams.locale();
+   * if (hasLocale(strictLocalesList, rootLocale)) {
+   *   locale = rootLocale;
+   * } else {
+   *   // Fallback or trigger 404 for unknown locales
+   *   notFound();
+   * }
+   */
+
   // Verify that the incoming `locale` is valid
   if (!locale || !supportedLocales.includes(locale as TLocale)) {
     // If the locale is not supported or undefined, failback to the default

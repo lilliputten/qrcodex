@@ -2,21 +2,9 @@
   "AccessDeniedError": "Acceso denegado",
   "Add": "Agregar",
   "AddNew": "Agregar Nuevo",
-  "AddNewAnswer": "Agregar Nueva Respuesta",
-  "AddNewCategory": "Agregar Nueva Categoría",
-  "AddNewQuestion": "Agregar Nueva Pregunta",
-  "AddNewTopic": "Agregar Nuevo Tema",
   "AddTopic": "Agregar Tema",
   "Added": "Agregado",
-  "AiClientTypeHint": "Seleccione un proveedor de IA para generar los datos",
-  "AiClientTypeLabel": "Proveedor de IA",
-  "AiGenerationTemperature": "Temperatura de generación de IA",
-  "AiGenerationTemperatureHint": "Seleccione la temperatura de generación, de 0 a 1 (menos es una generación más predecible, más es más variable).",
-  "AllowedToGenerate": "Permitido generar",
   "Answer": "Respuesta",
-  "AnswerNotFound": "Respuesta no encontrada",
-  "Answers": "Respuestas",
-  "AnswersCount": "Las respuestas cuentan",
   "AnyLanguage": "Cualquier idioma",
   "AppLanguage": "Idioma de la aplicación",
   "Apply": "Aplicar",
@@ -428,5 +416,10 @@
     "Yoruba": "Yoruba",
     "Zhuang": "Zhuang",
     "Zulu": "Zulú"
+  },
+  "App": {
+    "Keywords": "",
+    "Description": "Aplicación web y bot de Telegram de QR Codex",
+    "Title": "QR Codex"
   }
 }
