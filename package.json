@@ -65,6 +65,9 @@
     "yaml": "^2.9.1",
     "zod": "^4.6.0"
   },
+  "alias": {
+    "react-dom": "@hot-loader/react-dom"
+  },
   "scripts": {
     "format-biome": "echo --Run biome prettier-- && biome format --write --unsafe",
     "format-all-UNUSED": "echo --Run prettier-- && prettier --write --cache . | grep -v -e cached -e unchanged || true",
@@ -84,9 +87,7 @@
     "start": "echo --Start the project-- && next start",
     "preview": "next build && next start",
     "xtunnel": "echo --Start xtunnel local dev server (don't forget to add the tunnel address as WEBHOOK_HOST to .env.local for webhook or .env.logging-ngrok for logging)-- && xtunnel http 3000",
+    "vercel-clean": "vercel remove --safe --yes mind-stack-trainer",
     "scripts-help": "echo --List all available script commands-- && npm-package-user-scripts-list"
-  },
-  "alias": {
-    "react-dom": "@hot-loader/react-dom"
   }
 }
