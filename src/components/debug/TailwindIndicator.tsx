@@ -25,7 +25,7 @@ export function TailwindIndicator() {
         'border-white/15',
         'p-3.5',
         'font-mono',
-        'text-xs',
+        'text-[0.7em]',
         'text-white',
       )}
     >

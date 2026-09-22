@@ -27,7 +27,7 @@ export function LandingPageContent() {
           className={cn(
             isDev && '__LandingPageContent_Logo', // DEBUG
             // 'h-5 w-25',
-            'h-5',
+            'w-25',
             'min-w-[8em] dark:invert',
           )}
           src="/next.svg"
@@ -124,7 +124,7 @@ export function LandingPageContent() {
           </a>
           */}
           <Button
-            // variant="outline"
+          // variant="outline"
           >
             <Link href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app">
               {t('IndexPage.documentationButton')}
