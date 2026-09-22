@@ -1,5 +1,5 @@
 import { isDev } from '@/config';
-import { cn } from '@/lib/react';
+import { cn } from '@/lib/utils';
 
 export function TailwindIndicator() {
   if (!isDev) {

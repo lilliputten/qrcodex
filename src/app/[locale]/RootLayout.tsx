@@ -41,7 +41,7 @@ import {
   localesList,
 } from '@/i18n';
 import { constructMetadata } from '@/lib/app';
-import { cn } from '@/lib/react';
+import { cn } from '@/lib/utils';
 
 export async function generateMetadata({ params }: TAwaitedLocaleProps) {
   const { locale } = await params;
